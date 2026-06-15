@@ -3,6 +3,11 @@
 The idea is to have a ready to use environment, with initial hooks and cmdline tools to automatically setup AiiDA stuff, like computer and codes, profiles, connect to the right postgres, rabbitmq. In this way, the user just needs to provide information (minimal) about the computer and codes, via yaml files.
 The only additional thing to understand is if we can use jupyter notebook kernels of the devbox environment. If so, I think everything is in place.
 
+## Devbox installation and usage
+
+For the installation, check this link: https://www.jetify.com/docs/devbox/installing-devbox.
+Once you have it, just run `devbox shell` inside this directory, to start installing the services and needed packages.
+
 ## AiiDA quick installation
 
 Just run:
