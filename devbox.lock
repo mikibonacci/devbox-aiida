@@ -1,0 +1,339 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "last_modified": "2026-05-15T18:21:44Z",
+      "resolved": "github:NixOS/nixpkgs/d233902339c02a9c334e7e593de68855ad26c4cb?lastModified=1778869304"
+    },
+    "postgresql@latest": {
+      "last_modified": "2026-05-15T18:21:44Z",
+      "plugin_version": "0.0.2",
+      "resolved": "github:NixOS/nixpkgs/d233902339c02a9c334e7e593de68855ad26c4cb#postgresql",
+      "source": "devbox-search",
+      "version": "17.10",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/q503kyx4v0isc64y48cmpxn1q0n0kz5x-postgresql-17.10",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/0w00h7hblhdprfshqrzshsmapz2p3cs3-postgresql-17.10-man",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/yx286q28kpg4gb44bm4pjwjdzm7zxhc9-postgresql-17.10-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/041wcz54z9z9ymavf56lfpf2my0ngcwq-postgresql-17.10-doc"
+            },
+            {
+              "name": "jit",
+              "path": "/nix/store/vq4qx2fwn5156qx1mby4zb9557qkjzsy-postgresql-17.10-jit"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/zn4kbknimc1wmfdgbgi8wb9n2l13zp0d-postgresql-17.10-lib"
+            },
+            {
+              "name": "plperl",
+              "path": "/nix/store/nf2hd2pwcnmjf5g89p6ccyvk1iwwksj3-postgresql-17.10-plperl"
+            },
+            {
+              "name": "plpython3",
+              "path": "/nix/store/6wz5xkhz1r34jqcxk6g5ls0xckjfayi9-postgresql-17.10-plpython3"
+            },
+            {
+              "name": "pltcl",
+              "path": "/nix/store/h6z9rrr50yfjzvg5yqqznhfgwx9p7pnb-postgresql-17.10-pltcl"
+            }
+          ],
+          "store_path": "/nix/store/q503kyx4v0isc64y48cmpxn1q0n0kz5x-postgresql-17.10"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/432b67cqycmszk06kx5rf1h547bpxvqc-postgresql-17.10",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/mgybkylk1sb85xf91y5p3vv81hvb9kl8-postgresql-17.10-man",
+              "default": true
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/vam8q90cpbxj1aabfxlj9x9y304ff6gq-postgresql-17.10-debug"
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/nb0w2rz5b1xmbphmdpyjpmksbpq0hnrn-postgresql-17.10-dev"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/ls46qznxpqwma643lf34qpvi155pnys5-postgresql-17.10-doc"
+            },
+            {
+              "name": "jit",
+              "path": "/nix/store/gxb6nkfgjspl1j53qs45wc7f49cm7mg7-postgresql-17.10-jit"
+            },
+            {
+              "name": "plpython3",
+              "path": "/nix/store/qf4y8zwar7dyg975yyjwj2fzx4iafvgh-postgresql-17.10-plpython3"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/82fs0lqkx891qyfm711vpc7sqqgsvpvb-postgresql-17.10-lib"
+            },
+            {
+              "name": "plperl",
+              "path": "/nix/store/j4zjn4l5vvfniyn7szhn63lxqz8rjcsb-postgresql-17.10-plperl"
+            },
+            {
+              "name": "pltcl",
+              "path": "/nix/store/68b3y3rdmyjinhfra7g3291hbxvs4c4g-postgresql-17.10-pltcl"
+            }
+          ],
+          "store_path": "/nix/store/432b67cqycmszk06kx5rf1h547bpxvqc-postgresql-17.10"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/23jz38lxiq5ljhbxqcm2rhkicvif2dyp-postgresql-17.10",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/f3wrv13cd88zyv2l8l2i8acr0khp6g3x-postgresql-17.10-man",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/93b0540p3jxc4fqqdggdzwph5liwds56-postgresql-17.10-dev"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/qhjkg0jbwb6ykhdhckwhi3j1hngnpd9g-postgresql-17.10-lib"
+            },
+            {
+              "name": "plperl",
+              "path": "/nix/store/aqc53iwpjv0wz1m9nnd6zihxwxs987yc-postgresql-17.10-plperl"
+            },
+            {
+              "name": "plpython3",
+              "path": "/nix/store/1r73qf3j6w1648dfwdsn3vnsa920zpah-postgresql-17.10-plpython3"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/nirqn4w8mgrn3f4ydsj9qxcp3q55x05r-postgresql-17.10-doc"
+            },
+            {
+              "name": "jit",
+              "path": "/nix/store/8cnccp841xx20lqlp1d0iqyicxr109hz-postgresql-17.10-jit"
+            },
+            {
+              "name": "pltcl",
+              "path": "/nix/store/cf0x7zy860gdw94n0iqgv7cpm1aqawsp-postgresql-17.10-pltcl"
+            }
+          ],
+          "store_path": "/nix/store/23jz38lxiq5ljhbxqcm2rhkicvif2dyp-postgresql-17.10"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/kfyvpibc9wn10y8lw86mqkfk01k76hsp-postgresql-17.10",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/nbgzrns6nwqh1nj09w4fsgbi94wm902n-postgresql-17.10-man",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/1hwc588pj8r39acr5pshgmml91pmmkaq-postgresql-17.10-dev"
+            },
+            {
+              "name": "plperl",
+              "path": "/nix/store/aj7d2jgprn1ag07iklx2wzfhh64pwwbi-postgresql-17.10-plperl"
+            },
+            {
+              "name": "pltcl",
+              "path": "/nix/store/1w1f9s4089apn9dp82fczg2sni7sdjm9-postgresql-17.10-pltcl"
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/cqzjsdw7qa82ilcs57wqaiss1v58dq1f-postgresql-17.10-debug"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/2s0qd3ncrw5azy586kpwy5gnr0qrvzyd-postgresql-17.10-doc"
+            },
+            {
+              "name": "jit",
+              "path": "/nix/store/0dypc6i4akiplxh1ba3vdvllzz8w5qza-postgresql-17.10-jit"
+            },
+            {
+              "name": "lib",
+              "path": "/nix/store/86rsh99cv7n0mi3wz6i8g1hzi7bjapli-postgresql-17.10-lib"
+            },
+            {
+              "name": "plpython3",
+              "path": "/nix/store/360w5crcl3k17d2ylqs9ki7dn2l0hlaf-postgresql-17.10-plpython3"
+            }
+          ],
+          "store_path": "/nix/store/kfyvpibc9wn10y8lw86mqkfk01k76hsp-postgresql-17.10"
+        }
+      }
+    },
+    "python@3.12": {
+      "last_modified": "2026-04-23T13:07:47Z",
+      "plugin_version": "0.0.4",
+      "resolved": "github:NixOS/nixpkgs/01fbdeef22b76df85ea168fbfe1bfd9e63681b30#python312",
+      "source": "devbox-search",
+      "version": "3.12.13",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/fn6fnl5cg8qnsn1xn3lwaahk48vyw9l7-python3-3.12.13",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/fn6fnl5cg8qnsn1xn3lwaahk48vyw9l7-python3-3.12.13"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/jczbi6lb8vws7zc251v47bpijh805lyg-python3-3.12.13",
+              "default": true
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/2x5zchy1i0bprgxdvn5crjjmc4dw83p1-python3-3.12.13-debug"
+            }
+          ],
+          "store_path": "/nix/store/jczbi6lb8vws7zc251v47bpijh805lyg-python3-3.12.13"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/074rsjnaz8sf3xdf09a16zcw1qf8cj81-python3-3.12.13",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/074rsjnaz8sf3xdf09a16zcw1qf8cj81-python3-3.12.13"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/h3q2g9wq4x3q84164qsfm3lz5djj0bf3-python3-3.12.13",
+              "default": true
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/8hjni6450l0l4m5cvlxjb6wn7r0ynffl-python3-3.12.13-debug"
+            }
+          ],
+          "store_path": "/nix/store/h3q2g9wq4x3q84164qsfm3lz5djj0bf3-python3-3.12.13"
+        }
+      }
+    },
+    "rabbitmq-server@latest": {
+      "last_modified": "2026-04-23T13:07:47Z",
+      "resolved": "github:NixOS/nixpkgs/01fbdeef22b76df85ea168fbfe1bfd9e63681b30#rabbitmq-server",
+      "source": "devbox-search",
+      "version": "4.2.5",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/9q27rz4rdzdik36akcd09yal1q4wyyk7-rabbitmq-server-4.2.5",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/6g3fdfdfksy1k5w1ikxvjq9a8armchqp-rabbitmq-server-4.2.5-man",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/zbkch7dpn7gn7zxbrya1dda91cm6rfi1-rabbitmq-server-4.2.5-doc"
+            }
+          ],
+          "store_path": "/nix/store/9q27rz4rdzdik36akcd09yal1q4wyyk7-rabbitmq-server-4.2.5"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/k1ds50j02i66bjrna0j880j32dnh4bi6-rabbitmq-server-4.2.5",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/8n09a5rvblhjdn7p0wkych92mxw80bqr-rabbitmq-server-4.2.5-man",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/ndv2853cpphjj4ah0h3szqiv1ylnzihl-rabbitmq-server-4.2.5-doc"
+            }
+          ],
+          "store_path": "/nix/store/k1ds50j02i66bjrna0j880j32dnh4bi6-rabbitmq-server-4.2.5"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/hhgzsxc0v3bdlp4gx56par0llvb3qs0y-rabbitmq-server-4.2.5",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/lvsg8mi5r7aih40a2sh8j126bbx3fxlv-rabbitmq-server-4.2.5-man",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/39f1had64k232lxqhhxwyi33lvbykf0h-rabbitmq-server-4.2.5-doc"
+            }
+          ],
+          "store_path": "/nix/store/hhgzsxc0v3bdlp4gx56par0llvb3qs0y-rabbitmq-server-4.2.5"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/md386k5f5j5in5wqfn3v9fk4ls5n1jdc-rabbitmq-server-4.2.5",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/xs2l9768m5j1qa85rj0ggmafals8wi52-rabbitmq-server-4.2.5-man",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/waq03wh0y2rrr6i9px1kw2wpg716yidq-rabbitmq-server-4.2.5-doc"
+            }
+          ],
+          "store_path": "/nix/store/md386k5f5j5in5wqfn3v9fk4ls5n1jdc-rabbitmq-server-4.2.5"
+        }
+      }
+    }
+  }
+}

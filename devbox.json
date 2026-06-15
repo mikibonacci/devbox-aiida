@@ -1,0 +1,33 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.17.2/.schema/devbox.schema.json",
+  "packages": [
+    "postgresql@latest",
+    "python@3.12",
+    "rabbitmq-server@latest"
+  ],
+  "shell": {
+    "init_hook": [
+      "export VENV_DIR=\"$PWD/.venv\"",
+      "if [ ! -d \"$VENV_DIR\" ]; then echo 'Creating virtual environment...' && python -m venv \"$VENV_DIR\"; fi",
+      ". \"$VENV_DIR/bin/activate\"",
+      "eval \"$(_VERDI_COMPLETE=bash_source verdi | sed 's/ -o nosort//')\""  ,
+      "export AIIDA_PATH=\"$PWD/aiida\""
+    ],
+    "scripts": {
+      "test": [
+        "echo \"Error: no test specified\" && exit 1"
+      ],
+      "install-requirements": [
+        "if [ ! -d \"aiida\" ]; then mkdir aiida; fi",
+        "pip install -r requirements.txt"
+      ],
+      "create-aiida-profile":[
+        "devbox services up -b",
+        "verdi presto --use-postgres",
+      ]
+    }
+  },
+  "include": [
+        "github:jetify-com/devbox-plugins?dir=rabbitmq"
+    ]
+}
