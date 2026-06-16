@@ -1,0 +1,5 @@
+- installation and setup script
+- install pseudos
+- run install computer and codes yaml files
+- test computer
+- install plugins if needed

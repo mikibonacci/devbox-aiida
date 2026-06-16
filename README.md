@@ -21,14 +21,14 @@ devbox run install-requirements
 You can create a profile with all functionalities (postgres, rabbitmq), by running:
 
 ```shell
-devbox services up -b # to start postgres, rabbitmq
-verdi presto --use-postgres 
-```
-
-or, alternatively:
-
-```shell
 devbox run create-aiida-profile # script to run both the above commands.
 ```
 
-It is important that the services stay up when you use AiiDA (the can be turned off by running devbox services down). So, when you use AiiDA, be sure to manually run `devbox services up -b` (or without the `-b` if you want to check them).
+or, alternatively (if you know what you are doing):
+
+```shell
+devbox services start # to start postgres, rabbitmq; to stop them, run `devbox services stop`
+verdi presto --use-postgres # if you already have a profile, this will create a new one. 
+```
+
+It is important that the services stay up when you use AiiDA (the can be turned off by running `devbox services stop`). So, when you use AiiDA, be sure to manually run `devbox services up -b` (or without the `-b` if you want to check them).

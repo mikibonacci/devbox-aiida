@@ -22,8 +22,15 @@
         "pip install -r requirements.txt"
       ],
       "create-aiida-profile":[
-        "devbox services up -b",
-        "verdi presto --use-postgres"
+        "devbox services start 2>/dev/null || true",
+        "if verdi profile list 2>/dev/null | grep -qv '^Report:'; then echo 'AiiDA profile already exists, skipping creation. Run `verdi profile list` to see it.'; else verdi presto --use-postgres; fi"
+      ],
+      "install-pseudos":[
+        "aiida-pseudo install sssp --functional PBE || true",
+        "aiida-pseudo install pseudo-dojo -r SR -f upf || true",
+        "aiida-pseudo install pseudo-dojo -r FR -f upf || true",
+        "echo \"Pseudo potentials should be installed. To check them, run: aiida-pseudo list\"",
+        "echo \"To install from a folder, run: aiida-pseudo install family <folder_name> <label_you_want> -P pseudo.upf\" "
       ]
     }
   },
