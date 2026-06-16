@@ -23,7 +23,7 @@
       ],
       "create-aiida-profile":[
         "devbox services up -b",
-        "verdi presto --use-postgres",
+        "verdi presto --use-postgres"
       ]
     }
   },
