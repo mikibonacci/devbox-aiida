@@ -30,7 +30,8 @@
         "aiida-pseudo install pseudo-dojo -r SR -f upf || true",
         "aiida-pseudo install pseudo-dojo -r FR -f upf || true",
         "echo \"Pseudo potentials should be installed. To check them, run: aiida-pseudo list\"",
-        "echo \"To install from a folder, run: aiida-pseudo install family <folder_name> <label_you_want> -P pseudo.upf\" "
+        "echo \"To install from a folder, run: aiida-pseudo install family <folder_name> <label_you_want> -P pseudo.upf\" ",
+        "echo \"To install from a folder and then setup cutoffs (the best procedure), please read the documentation of aiida-pseudo.\" "
       ]
     }
   },

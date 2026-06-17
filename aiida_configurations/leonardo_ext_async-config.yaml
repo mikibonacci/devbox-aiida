@@ -1,0 +1,6 @@
+authentication_script: None
+backend: asyncssh
+host: login02-ext.leonardo.cineca.it
+max_io_allowed: 8
+safe_interval: 15.0
+use_login_shell: true

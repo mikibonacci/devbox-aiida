@@ -1,0 +1,18 @@
+append_text: ''
+default_memory_per_machine: null
+description: 'Leonardo supercomputer, async transport'
+hostname: login02-ext.leonardo.cineca.it
+label: leonardo_ext_async
+mpiprocs_per_machine: 4
+mpirun_command: mpirun -np {tot_num_mpiprocs} --map-by socket:PE=8 --rank-by core
+prepend_text: |
+  #SBATCH --exclusive
+  #SBATCH --gres=gpu:4
+  export OMP_NUM_THREADS=8
+  export OMP_PLACES=cores
+  export OMP_PROC_BIND=close
+scheduler: core.slurm
+shebang: '#!/bin/bash'
+transport: core.ssh_async
+use_double_quotes: false
+#work_dir: /leonardo_scratch/large/userexternal/mbonacci/aiida-instance # leaving this so the user has to set it.
