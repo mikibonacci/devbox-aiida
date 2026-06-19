@@ -1,0 +1,13 @@
+append_text: ''
+default_memory_per_machine: null
+description: ''
+hostname: corvina.fisica.unimo.it
+label: corvina-direct
+mpiprocs_per_machine: 1
+mpirun_command: mpirun -np {tot_num_mpiprocs}
+prepend_text: ''
+scheduler: core.direct
+shebang: '#!/bin/bash'
+transport: core.ssh_async
+use_double_quotes: false
+work_dir: /scratch/{username}/aiida/

@@ -34,6 +34,23 @@ aiida-quantumespresso setup codes localhost pw.x projwfc.x dos.x wannier90.x
 
 and check them via `verdi code list`.
 
+## Setup additional remote computer and codes
+
+We store some configuration files in `aiida_configurations`. For example, for corvina (local workstation):
+
+```shell
+verdi computer setup --config aiida_configurations/computer/corvina-direct-setup.yaml
+verdi computer configure core.ssh_async --config aiida_configurations/computer/corvina-direct-config.yaml
+```
+
+And then, for the related codes:
+
+```shell
+verdi code create core.code.installed --config aiida_configurations/codes/p2y-5.3.0-gcc\@corvina-direct.yaml
+```
+
+Be careful: store only **once** the codes, otherwise you will have multiple nodes representing the same code (check the `verdi code list | grep corvina`).
+
 ## Using Jupyter notebooks
 
 When using Jupyter notebooks, you need to install the kernel (and use it in the notebooks):
@@ -51,3 +68,7 @@ os.environ["AIIDA_PATH"] = "YOUR-AIIDA-PATH" # find it via `echo $AIIDA_PATH` in
 from aiida import load_profile
 load_profile()
 ```
+
+## Setup the right shell
+
+Remember, before to start `devbox shell` to setup the environment variable `SHELL` with a >=5 version of bash. This helps for tab completion. I suggest to put this in the .bashrc or .bash_profile of your machine.
