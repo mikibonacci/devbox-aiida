@@ -3,30 +3,27 @@
   "packages": [
     "postgresql@17.10",
     "python@3.12",
-    "rabbitmq-server@4.2.5"
+    "rabbitmq-server@4.2.5",
+    "gnuplot@6.0.4"
   ],
   "shell": {
     "init_hook": [
-      "export VENV_DIR=\"$PWD/.venv\"",
-      "if [ ! -d \"$VENV_DIR\" ]; then echo 'Creating virtual environment...' && python -m venv \"$VENV_DIR\"; fi",
-      ". \"$VENV_DIR/bin/activate\"",
-      "eval \"$(_VERDI_COMPLETE=bash_source verdi | sed 's/ -o nosort//')\""  ,
-      "export AIIDA_PATH=\"$PWD/aiida\""
+      ". \"$PWD/scripts/init_hook.sh\""
     ],
     "scripts": {
       "test": [
         "echo \"Error: no test specified\" && exit 1"
       ],
       "install-requirements": [
-        "if [ ! -d \"aiida\" ]; then mkdir aiida; fi",
-        "pip install -r requirements.txt"
+        ". $PWD/scripts/install_requirements.sh"
       ],
-      "create-aiida-profile":[
+      "create-aiida-profile": [
         "devbox services start 2>/dev/null || true",
         "if verdi profile list 2>/dev/null | grep -qv '^Report:'; then echo 'AiiDA profile already exists, skipping creation. Run `verdi profile list` to see it.'; else verdi presto --use-postgres; fi"
       ],
-      "install-pseudos":[
+      "install-pseudos": [
         "aiida-pseudo install sssp --functional PBE || true",
+        "aiida-pseudo install sssp --functional PBEsol || true",
         "aiida-pseudo install pseudo-dojo -r SR -f upf || true",
         "aiida-pseudo install pseudo-dojo -r FR -f upf || true",
         "echo \"Pseudo potentials should be installed. To check them, run: aiida-pseudo list\"",
@@ -36,6 +33,6 @@
     }
   },
   "include": [
-        "github:jetify-com/devbox-plugins?dir=rabbitmq"
-    ]
+    "github:jetify-com/devbox-plugins?dir=rabbitmq"
+  ]
 }

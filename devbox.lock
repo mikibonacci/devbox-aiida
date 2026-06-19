@@ -5,6 +5,54 @@
       "last_modified": "2026-05-15T18:21:44Z",
       "resolved": "github:NixOS/nixpkgs/d233902339c02a9c334e7e593de68855ad26c4cb?lastModified=1778869304"
     },
+    "gnuplot@6.0.4": {
+      "last_modified": "2026-05-21T08:15:18Z",
+      "resolved": "github:NixOS/nixpkgs/4a29d733e8a7d5b824c3d8c958a946a9867b3eb2#gnuplot",
+      "source": "devbox-search",
+      "version": "6.0.4",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/jn9slfm0wzwlijdh7585s068cplvh57h-gnuplot-6.0.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/jn9slfm0wzwlijdh7585s068cplvh57h-gnuplot-6.0.4"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/8ilm6l1gwln16lbq1bfb08rqiywhddg1-gnuplot-6.0.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/8ilm6l1gwln16lbq1bfb08rqiywhddg1-gnuplot-6.0.4"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/h1h4jlpsfv60xdba7hqaaazcwypx3126-gnuplot-6.0.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/h1h4jlpsfv60xdba7hqaaazcwypx3126-gnuplot-6.0.4"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/yixmzdlalpdrsfb187w6msl7n2sjjyx8-gnuplot-6.0.4",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/yixmzdlalpdrsfb187w6msl7n2sjjyx8-gnuplot-6.0.4"
+        }
+      }
+    },
     "postgresql@17.10": {
       "last_modified": "2026-06-08T15:01:26Z",
       "plugin_version": "0.0.2",

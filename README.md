@@ -24,11 +24,30 @@ You can create a profile with all functionalities (postgres, rabbitmq), by runni
 devbox run create-aiida-profile # script to run both the above commands.
 ```
 
-or, alternatively (if you know what you are doing):
+It is important that the services stay up when you use AiiDA (the can be turned off by running `devbox services stop`). So, when you use AiiDA, be sure to manually run `devbox services up -b` (or without the `-b` if you want to check them).
+
+To install QE codes you have in your PATH:
 
 ```shell
-devbox services start # to start postgres, rabbitmq; to stop them, run `devbox services stop`
-verdi presto --use-postgres # if you already have a profile, this will create a new one. 
+aiida-quantumespresso setup codes localhost pw.x projwfc.x dos.x wannier90.x
 ```
 
-It is important that the services stay up when you use AiiDA (the can be turned off by running `devbox services stop`). So, when you use AiiDA, be sure to manually run `devbox services up -b` (or without the `-b` if you want to check them).
+and check them via `verdi code list`.
+
+## Using Jupyter notebooks
+
+When using Jupyter notebooks, you need to install the kernel (and use it in the notebooks):
+
+```shell
+python -m ipykernel install --user --name venv --display-name "venv"
+```
+
+If this does not work, for each notebook the first block should be:
+
+```python
+import os
+os.environ["AIIDA_PATH"] = "YOUR-AIIDA-PATH" # find it via `echo $AIIDA_PATH` in the devbox shell or by running `devbox run echo $AIIDA_PATH`.
+
+from aiida import load_profile
+load_profile()
+```
