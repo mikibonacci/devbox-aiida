@@ -1,0 +1,6 @@
+authentication_script: None
+backend: asyncssh
+host: aries.hpc.unimo.it
+max_io_allowed: 8
+safe_interval: 15.0
+use_login_shell: true

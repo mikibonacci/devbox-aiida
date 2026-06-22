@@ -39,17 +39,27 @@ and check them via `verdi code list`.
 We store some configuration files in `aiida_configurations`. For example, for corvina (local workstation):
 
 ```shell
-verdi computer setup --config aiida_configurations/computer/corvina-direct-setup.yaml
-verdi computer configure core.ssh_async --config aiida_configurations/computer/corvina-direct-config.yaml
+verdi computer setup --config aiida_configurations/corvina/corvina-direct-setup.yaml
+verdi computer configure core.ssh_async --config aiida_configurations/corvina/corvina-direct-config.yaml
 ```
 
 And then, for the related codes:
 
 ```shell
-verdi code create core.code.installed --config aiida_configurations/codes/p2y-5.3.0-gcc\@corvina-direct.yaml
+verdi code create core.code.installed --config aiida_configurations/corvina/codes/p2y-5.3.0-gcc\@corvina-direct.yaml
 ```
 
 Be careful: store only **once** the codes, otherwise you will have multiple nodes representing the same code (check the `verdi code list | grep corvina`).
+
+Alternatively, use the helper script to set up the computer **and all codes** in one shot (with duplicate detection):
+
+```shell
+python scripts/setup_aiida_resources.py aiida_configurations/corvina
+```
+
+Options:
+- `--computer-only` – only set up the computer, skip codes
+- `--codes-only` – only register codes, skip computer setup
 
 ## Using Jupyter notebooks
 

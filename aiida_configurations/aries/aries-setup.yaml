@@ -1,0 +1,13 @@
+append_text: ''
+default_memory_per_machine: null
+description: aries unimore
+hostname: aries.hpc.unimo.it
+label: aries
+mpiprocs_per_machine: 52
+mpirun_command: mpirun -np {tot_num_mpiprocs}
+prepend_text: export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+scheduler: core.slurm
+shebang: '#!/bin/bash'
+transport: core.ssh_async
+use_double_quotes: false
+work_dir: /scratch1/mbonacci/aiida
