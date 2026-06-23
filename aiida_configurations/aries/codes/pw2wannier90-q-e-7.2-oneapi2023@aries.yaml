@@ -1,0 +1,9 @@
+append_text: ''
+computer: aries
+default_calc_job_plugin: quantumespresso.pw2wannier90
+description: pre-installed qe
+filepath_executable: /unimore_home/labswmgr/SPACK/opt/linux-rocky8-icelake/oneapi-2023.1.0/quantum-espresso-7.2-kry7kx6kvbjvxqweffmsbtu6i55dzr4n/bin/pw2wannier90.x
+label: pw2wannier90-q-e-7.2-oneapi2023
+prepend_text: module load quantum-espresso/7.2--oneapi-mpi-2021.9.0--oneapi-2023.1.0
+use_double_quotes: false
+with_mpi: null

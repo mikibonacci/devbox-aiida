@@ -1,0 +1,11 @@
+append_text: ''
+computer: corvina-direct
+default_calc_job_plugin: yambo.yambo
+description: w
+filepath_executable: /scratch/corvina/SPACK/opt/v1.1/linux-cascadelake/yambo-5.3.0-xpd4glqjfnh2flwbbadpgje27w4yvwj5/bin/yambo
+label: yambo-5.3.0-gcc
+prepend_text: 'module load profile/gcc/14.3.0
+
+  module load yambo/5.3.0--openmpi-5.0.8--gcc-14.3.0-xpd4glq'
+use_double_quotes: false
+with_mpi: null

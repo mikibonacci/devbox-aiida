@@ -1,0 +1,11 @@
+append_text: ''
+computer: corvina-direct
+default_calc_job_plugin: quantumespresso.projwfc
+description: d
+filepath_executable: /scratch/corvina/SPACK/opt/v1.1/linux-cascadelake/quantum-espresso-7.5-qd52igfqadm5mnexkkf3k675teonzzwm/bin/projwfc.x
+label: projwfc-q-e-7.5-gcc
+prepend_text: 'module load profile/gcc/14.3.0
+
+  module load quantum-espresso/7.5--openmpi-5.0.8--gcc-14.3.0-qd52igf'
+use_double_quotes: false
+with_mpi: null

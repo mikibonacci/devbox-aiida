@@ -1,0 +1,9 @@
+append_text: ''
+computer: aries
+default_calc_job_plugin: yambo.yambo
+description: pre-installed qe
+filepath_executable: /unimore_home/labswmgr/SPACK/opt/v0.23/linux-rocky8-icelake/oneapi-2025.0.0/yambo-5.3.0-pd3skjjmxrruko6zpsa2sdlyrpxl6k23/bin/p2y
+label: p2y-5.3-oneapi-2025
+prepend_text: module load yambo/5.3.0--oneapi-mpi-2021.14.0--oneapi-2025.0.0
+use_double_quotes: false
+with_mpi: null

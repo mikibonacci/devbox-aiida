@@ -1,0 +1,26 @@
+append_text: ''
+computer: leonardo_ext_async
+default_calc_job_plugin: wannier90.wannier90
+description: d
+filepath_executable: /leonardo/pub/userexternal/nspallan/opt/q-e-7.5/bin/wannier90.x
+label: wannier90-qe7.5-nicola
+prepend_text: 'module use /leonardo/pub/userexternal/nspallan/opt/nvidia/hpc_sdk/modulefiles
+
+  module use /leonardo/pub/userexternal/nspallan/spack-0.22.2-06/modules
+
+
+  module load nvhpc/25.7
+
+  module load openblas/0.3.26--nvhpc--25.7-zwvvzh4
+
+  module load hpcx-mpi/2.22.1--nvhpc--25.7-ox2wtyt
+
+  module load fftw/3.3.10--hpcx-mpi--2.22.1--nvhpc--25.7-dgvodie
+
+  module load netlib-scalapack/2.2.0--hpcx-mpi--2.22.1--nvhpc--25.7
+
+  module load hdf5/1.14.3--hpcx-mpi--2.22.1--nvhpc--25.7-esqvsbz
+
+  module load libxc/6.2.2--nvhpc--25.7-7knhfqu'
+use_double_quotes: false
+with_mpi: null

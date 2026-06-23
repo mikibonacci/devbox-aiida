@@ -1,0 +1,9 @@
+append_text: ''
+computer: corvina-direct
+default_calc_job_plugin: yambo_wannier90.gw2wannier90
+description: w
+filepath_executable: /home/mbonacci/Codes/aiida-yambo-wannier90/utils/gw2wannier90.py
+label: gw2wannier90
+prepend_text: 'source /home/mbonacci/gw2wannier90-env/bin/activate'
+use_double_quotes: false
+with_mpi: null

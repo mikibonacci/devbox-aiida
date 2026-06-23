@@ -1,0 +1,9 @@
+append_text: ''
+computer: aries
+default_calc_job_plugin: yambo_wannier90.gw2wannier90
+description: gw2wann
+filepath_executable: /unimore_home/mbonacci/aiida-yambo-wannier90/utils/gw2wannier90.py
+label: gw2wannier90
+prepend_text: source /unimore_home/mbonacci/aiida-yambo-wannier90/gw2wannier90-venv/bin/activate
+use_double_quotes: false
+with_mpi: null

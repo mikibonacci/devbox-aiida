@@ -1,0 +1,13 @@
+append_text: ''
+computer: leonardo_ext_async
+default_calc_job_plugin: yambo.yambo
+description: ''
+filepath_executable: /leonardo/prod/spack/06/install/0.22/linux-rhel8-icelake/nvhpc-24.5/yambo-5.3.0-hcofch3csvnjggp7vgy5busnxgspec6y/bin/yambo
+label: yambo-5.3.0-preinstalled
+prepend_text: 'module load spack
+
+  module load profile/chem-phys
+
+  module load yambo/5.3.0--hpcx-mpi--2.19--nvhpc--24.5-cuda-12.2'
+use_double_quotes: false
+with_mpi: null
