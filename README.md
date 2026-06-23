@@ -43,6 +43,8 @@ verdi computer setup --config aiida_configurations/corvina/corvina-direct-setup.
 verdi computer configure core.ssh_async --config aiida_configurations/corvina/corvina-direct-config.yaml
 ```
 
+If AiiDA asks for some additional information during the execution of the above commands, e.g. the default memory of the nodes, you can prompt an exclamation mark to skip it.
+
 And then, for the related codes:
 
 ```shell
@@ -82,3 +84,27 @@ load_profile()
 ## Setup the right shell
 
 Remember, before to start `devbox shell` to setup the environment variable `SHELL` with a >=5 version of bash. This helps for tab completion. I suggest to put this in the .bashrc or .bash_profile of your machine.
+
+## Setup gw2wannier90 code on remote
+
+- create a venv
+- clone the aiida-yambo-wannier90 package
+- install requirements (numpy, scipy)
+
+For example, on `aries`:
+
+```shell
+module load python/3.14.0-gcc-8.5.0-ddmg2af
+python -m venv gw2wannier90-venv
+source gw2wannier90-venv/bin/activate
+pip install numpy scipy
+git clone https://github.com/aiidaplugins/aiida-yambo-wannier90.git
+
+# TEST:
+python aiida-yambo-wannier90/utils/gw2wannier90.py 
+
+# EXPECTED OUTPUT:
+
+# usage: gw2wannier90.py [-h] [-o OUTPUT_SEEDNAME] [-e EXTENSIONS] [--no_sort] seedname
+# gw2wannier90.py: error: the following arguments are required: seedname
+```

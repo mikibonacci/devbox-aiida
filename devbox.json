@@ -3,13 +3,15 @@
   "packages": [
     "postgresql@17.10",
     "python@3.12",
-    "rabbitmq-server@4.2.5",
-    "gnuplot@6.0.4"
+    "rabbitmq-server@3.8.9",
+    "gnuplot@6.0.4",
+    "watch@latest",
+    "python312Packages.pip@latest"
   ],
   "shell": {
     "init_hook": [
       ". \"$PWD/scripts/init_hook.sh\""
-  ],
+    ],
     "scripts": {
       "test": [
         "echo \"Error: no test specified\" && exit 1"

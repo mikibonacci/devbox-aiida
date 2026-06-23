@@ -242,6 +242,90 @@
         }
       }
     },
+    "python312Packages.pip@latest": {
+      "last_modified": "2025-11-23T21:50:36Z",
+      "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#python312Packages.pip",
+      "source": "devbox-search",
+      "version": "25.0.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/hnay7d9b8w7rx825dxgqf3nhlwayzlg3-python3.12-pip-25.0.1",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/qqd1r168y4sabv7rhxs4dfairp0w2x7v-python3.12-pip-25.0.1-man",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/rzfqyb0l8hdv880lrk3d2w6484w985ym-python3.12-pip-25.0.1-dist"
+            }
+          ],
+          "store_path": "/nix/store/hnay7d9b8w7rx825dxgqf3nhlwayzlg3-python3.12-pip-25.0.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/6414365485ywyh0bw6v1i1ps0jyrvk6y-python3.12-pip-25.0.1",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/wxn5yc797qrxw0cvzqhgsspb8rcb561k-python3.12-pip-25.0.1-man",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/jinhkx1in1gfgqqjc6vkm4d40zfq6lf9-python3.12-pip-25.0.1-dist"
+            }
+          ],
+          "store_path": "/nix/store/6414365485ywyh0bw6v1i1ps0jyrvk6y-python3.12-pip-25.0.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/5cir6lgryqnssm5fvd5wab2bc6g61rmg-python3.12-pip-25.0.1",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/7idqy3rlx2pycdwg3a17rjjp0n8jmrqb-python3.12-pip-25.0.1-man",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/mraak0x6kqigq1zlm9l4l338xb4pv071-python3.12-pip-25.0.1-dist"
+            }
+          ],
+          "store_path": "/nix/store/5cir6lgryqnssm5fvd5wab2bc6g61rmg-python3.12-pip-25.0.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/s5jl20jq8gwrm9xpzsa925zgal4qf2cm-python3.12-pip-25.0.1",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/19p9qpx0fadsqrvyk4rv68c47r3mp7xp-python3.12-pip-25.0.1-man",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/1vfsfxpi1b0cva4q1v2j2if1pj4hqvvc-python3.12-pip-25.0.1-dist"
+            }
+          ],
+          "store_path": "/nix/store/s5jl20jq8gwrm9xpzsa925zgal4qf2cm-python3.12-pip-25.0.1"
+        }
+      }
+    },
     "python@3.12": {
       "last_modified": "2026-04-23T13:07:47Z",
       "plugin_version": "0.0.4",
@@ -299,89 +383,17 @@
         }
       }
     },
-    "rabbitmq-server@4.2.5": {
-      "last_modified": "2026-05-29T05:01:12Z",
-      "resolved": "github:NixOS/nixpkgs/e9a7635a57597d9754eccebdfc7045e6c8600e6b#rabbitmq-server",
+    "rabbitmq-server@3.8.9": {
+      "last_modified": "2021-08-02T04:01:24Z",
+      "resolved": "github:NixOS/nixpkgs/2a6732c38dfa8c1a3c8288f2b47a28cbea57a304#rabbitmq-server",
       "source": "devbox-search",
-      "version": "4.2.5",
-      "systems": {
-        "aarch64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/ch79w52ngbbxrm9dxf1amrpvf78fffva-rabbitmq-server-4.2.5",
-              "default": true
-            },
-            {
-              "name": "man",
-              "path": "/nix/store/2769xsqkdga93bi3akdbdaw1pyjnha24-rabbitmq-server-4.2.5-man",
-              "default": true
-            },
-            {
-              "name": "doc",
-              "path": "/nix/store/yp6hglwj57b0sgjj5g6rvrc5v1lnxzla-rabbitmq-server-4.2.5-doc"
-            }
-          ],
-          "store_path": "/nix/store/ch79w52ngbbxrm9dxf1amrpvf78fffva-rabbitmq-server-4.2.5"
-        },
-        "aarch64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/12hwm5m2avzcvckkp03vzs3qsb99vi2j-rabbitmq-server-4.2.5",
-              "default": true
-            },
-            {
-              "name": "man",
-              "path": "/nix/store/x3ls89ws9zwfwccj5npccp491w76aap8-rabbitmq-server-4.2.5-man",
-              "default": true
-            },
-            {
-              "name": "doc",
-              "path": "/nix/store/wc33y73gksnvsghi0jrqc73p4wfy7m7h-rabbitmq-server-4.2.5-doc"
-            }
-          ],
-          "store_path": "/nix/store/12hwm5m2avzcvckkp03vzs3qsb99vi2j-rabbitmq-server-4.2.5"
-        },
-        "x86_64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/yg0dmc8yvjr57340ih6vsqdm86jfrhd5-rabbitmq-server-4.2.5",
-              "default": true
-            },
-            {
-              "name": "man",
-              "path": "/nix/store/z9jivi02zwp5f4klwib9b93sajxc85rb-rabbitmq-server-4.2.5-man",
-              "default": true
-            },
-            {
-              "name": "doc",
-              "path": "/nix/store/7vs8g7z3zx4amm6m23v2r2ln3sd3ib7r-rabbitmq-server-4.2.5-doc"
-            }
-          ],
-          "store_path": "/nix/store/yg0dmc8yvjr57340ih6vsqdm86jfrhd5-rabbitmq-server-4.2.5"
-        },
-        "x86_64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/3ghhx2pr8rkhd6877kx80na9gpr570y1-rabbitmq-server-4.2.5",
-              "default": true
-            },
-            {
-              "name": "man",
-              "path": "/nix/store/2pjb77wd61q8ng23pr51p64rrfrl2iac-rabbitmq-server-4.2.5-man",
-              "default": true
-            },
-            {
-              "name": "doc",
-              "path": "/nix/store/0vmbkn31s4bbz1k4sk27czphsb8yf416-rabbitmq-server-4.2.5-doc"
-            }
-          ],
-          "store_path": "/nix/store/3ghhx2pr8rkhd6877kx80na9gpr570y1-rabbitmq-server-4.2.5"
-        }
-      }
+      "version": "3.8.9"
+    },
+    "watch@latest": {
+      "last_modified": "2023-02-24T09:01:09Z",
+      "resolved": "github:NixOS/nixpkgs/7d0ed7f2e5aea07ab22ccb338d27fbe347ed2f11#watch",
+      "source": "devbox-search",
+      "version": "3.3.17"
     }
   }
 }
