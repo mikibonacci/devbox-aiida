@@ -15,4 +15,4 @@ scheduler: core.slurm
 shebang: '#!/bin/bash'
 transport: core.ssh_async
 use_double_quotes: false
-#work_dir: /leonardo_scratch/large/userexternal/mbonacci/aiida-instance # leaving this so the user has to set it.
+work_dir: /leonardo_scratch/large/userexternal/{username}/aiida-instance
