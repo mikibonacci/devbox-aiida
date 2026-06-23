@@ -16,6 +16,22 @@ Just run:
 devbox run install-requirements
 ```
 
+Additional temporary requirements to run wannier90 stuff:
+
+```shell
+git clone https://github.com/mikibonacci/aiida-wannier90-workflows.git
+git checkout fix-inputpp
+pip install aiida-wannier90-workflows
+```
+
+and for yambo:
+
+```shell
+git clone https://github.com/mikibonacci/aiida-yambo.git
+git checkout new_cleanup
+pip install -e aiida-yambo
+```
+
 ## Quickly setting up and AiiDA profile with full functionalities
 
 You can create a profile with all functionalities (postgres, rabbitmq), by running:
