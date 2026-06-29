@@ -13,6 +13,9 @@
       ". \"$PWD/scripts/init_hook.sh\""
     ],
     "scripts": {
+      "init-aiida": [
+      ". \"$PWD/scripts/init_hook.sh\""
+      ],
       "test": [
         "echo \"Error: no test specified\" && exit 1"
       ],
@@ -21,7 +24,8 @@
       ],
       "create-aiida-profile": [
         "devbox services start 2>/dev/null || true",
-        "if verdi profile list 2>/dev/null | grep -qv '^Report:'; then echo 'AiiDA profile already exists, skipping creation. Run `verdi profile list` to see it.'; else verdi presto --use-postgres; fi"
+        "verdi presto --use-postgres",
+        "echo 'If running `verdi profile list` does not show any profile, run: `verdi presto --use-postgres`.'"
       ],
       "install-pseudos": [
         "aiida-pseudo install sssp --functional PBE || true",

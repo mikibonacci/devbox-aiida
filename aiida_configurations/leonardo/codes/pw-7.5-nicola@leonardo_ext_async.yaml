@@ -3,7 +3,7 @@ computer: leonardo_ext_async
 default_calc_job_plugin: quantumespresso.pw
 description: ''
 filepath_executable: /leonardo/pub/userexternal/nspallan/opt/q-e-7.5/bin/pw.x
-label: q-e-7.5-nicola
+label: pw-7.5-nicola
 prepend_text: 'module use /leonardo/pub/userexternal/nspallan/opt/nvidia/hpc_sdk/modulefiles
 
   module use /leonardo/pub/userexternal/nspallan/spack-0.22.2-06/modules

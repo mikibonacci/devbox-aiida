@@ -32,3 +32,5 @@ echo "Scripts available in this devbox:"
 echo "  - devbox run install-requirements: Install the required Python packages for AiiDA development"
 echo "  - devbox run create-aiida-profile: Create an AiiDA profile"
 echo "  - devbox run install-pseudos: Install pseudos in AiiDA"
+
+echo "Important: if this is the first time you run this environment, you can initialise the psql database by running: 'devbox services start && initdb'."

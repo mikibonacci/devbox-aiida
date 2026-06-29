@@ -6,9 +6,11 @@ The only additional thing to understand is if we can use jupyter notebook kernel
 ## Devbox installation and usage
 
 For the installation, check this link: https://www.jetify.com/docs/devbox/installing-devbox.
-Once you have it, just run `devbox shell` inside this directory, to start installing the services and needed packages.
+Once you have it, just run `devbox install` inside this directory, to start installing the services and needed packages.
 
 ## AiiDA quick installation
+
+First of all, load the virtual environment: `source scripts init_hook.sh`. This will load the python env, without entering in the devbox shell.
 
 Just run:
 
@@ -16,10 +18,17 @@ Just run:
 devbox run install-requirements
 ```
 
+Initialise the psql db:
+
+```shell
+devbox run initdb
+```
+
 Additional temporary requirements to run wannier90 stuff:
 
 ```shell
 git clone https://github.com/mikibonacci/aiida-wannier90-workflows.git
+cd aiida-wannier90-workflows
 git checkout fix-inputpp
 pip install aiida-wannier90-workflows
 ```
@@ -28,6 +37,7 @@ and for yambo:
 
 ```shell
 git clone https://github.com/mikibonacci/aiida-yambo.git
+cd aiida-yambo
 git checkout new_cleanup
 pip install -e aiida-yambo
 ```
@@ -37,6 +47,7 @@ pip install -e aiida-yambo
 You can create a profile with all functionalities (postgres, rabbitmq), by running:
 
 ```shell
+initdb # the first time you need to start postgresql
 devbox run create-aiida-profile # script to run both the above commands.
 ```
 
@@ -78,6 +89,17 @@ python scripts/setup_aiida_resources.py aiida_configurations/corvina
 Options:
 - `--computer-only` – only set up the computer, skip codes
 - `--codes-only` – only register codes, skip computer setup
+
+### Important note on remote computers
+
+They need to be set in you ~/.ssh/config file like this:
+
+```txt
+Host login02-ext.leonardo.cineca.it
+User mbonacci
+IdentityFile none
+ForwardAgent yes
+```
 
 ## Using Jupyter notebooks
 

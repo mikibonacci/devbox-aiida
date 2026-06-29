@@ -1,3 +1,4 @@
 aiida-core==2.8.0
 aiida-quantumespresso==5.0.0
 notebook==7.6.0
+ipympl
