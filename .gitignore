@@ -2,3 +2,7 @@ logfile
 aiida
 work
 .DS_Store
+.aiida
+.venv
+.devbox
+.DS_Store
