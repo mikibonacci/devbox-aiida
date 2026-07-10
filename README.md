@@ -10,7 +10,7 @@ Once you have it, just run `devbox install` inside this directory, to start inst
 
 ## AiiDA quick installation
 
-First of all, load the virtual environment: `source scripts init_hook.sh`. This will load the python env, without entering in the devbox shell.
+First of all, load the virtual environment: `source scripts init_hook.sh`. This will load the python env, without entering in the devbox shell. **Do not run devbox shell**: otherwise the shell will change and you will lose some functionality like tab completion and so on... if you did it, just run `exit`.
 
 Just run:
 
