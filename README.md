@@ -1,148 +1,36 @@
-# Devbox for ready to use AiiDA
+# devbox-aiida
 
-The idea is to have a ready to use environment, with initial hooks and cmdline tools to automatically setup AiiDA stuff, like computer and codes, profiles, connect to the right postgres, rabbitmq. In this way, the user just needs to provide information (minimal) about the computer and codes, via yaml files.
-The only additional thing to understand is if we can use jupyter notebook kernels of the devbox environment. If so, I think everything is in place.
+A ready-to-use environment for [AiiDA](https://www.aiida.net/): PostgreSQL and RabbitMQ managed by [devbox](https://www.jetify.com/devbox), a Python virtual environment, and scripts to create the profile and to register computers and codes from YAML files.
 
-## Devbox installation and usage
+**Do not run `devbox shell`.** Use devbox for the services and the `devbox run` scripts, and activate the environment in your own shell with `source scripts/init_hook.sh`.
 
-For the installation, check this link: https://www.jetify.com/docs/devbox/installing-devbox.
-Once you have it, just run `devbox install` inside this directory, to start installing the services and needed packages.
-
-## AiiDA quick installation
-
-First of all, load the virtual environment: `source scripts init_hook.sh`. This will load the python env, without entering in the devbox shell. **Do not run devbox shell**: otherwise the shell will change and you will lose some functionality like tab completion and so on... if you did it, just run `exit`.
-
-Just run:
+## Quick start
 
 ```shell
-devbox run install-requirements
+devbox install                     # install PostgreSQL, RabbitMQ, Python
+devbox run install-requirements    # create .venv, initialise PostgreSQL, install aiida-core
+devbox services up -b              # start PostgreSQL and RabbitMQ
+source scripts/init_hook.sh        # activate .venv and set AIIDA_PATH (every new terminal)
+devbox run create-aiida-profile    # first time only: create a profile
+verdi status
 ```
 
-Initialise the psql db:
+Stop with `verdi daemon stop` and `devbox services stop`.
+
+## Shortcut
+
+Add this to your `~/.bashrc` (or `~/.zshrc`) to jump to the folder and load the environment with one word:
 
 ```shell
-devbox run initdb
+alias gtd='cd /path/to/devbox_aiida && source scripts/init_hook.sh'
 ```
 
-Additional temporary requirements to run wannier90 stuff:
+## Documentation
+
+Full documentation (installation, services, profiles, computers and codes, troubleshooting) is in [`docs/`](docs/index.md), built with MkDocs:
 
 ```shell
-git clone https://github.com/mikibonacci/aiida-wannier90-workflows.git
-cd aiida-wannier90-workflows
-git checkout fix-inputpp
-pip install aiida-wannier90-workflows
-```
-
-and for yambo:
-
-```shell
-git clone https://github.com/mikibonacci/aiida-yambo.git
-cd aiida-yambo
-git checkout new_cleanup
-pip install -e aiida-yambo
-```
-
-## Quickly setting up and AiiDA profile with full functionalities
-
-You can create a profile with all functionalities (postgres, rabbitmq), by running:
-
-```shell
-initdb # the first time you need to start postgresql
-devbox run create-aiida-profile # script to run both the above commands.
-```
-
-It is important that the services stay up when you use AiiDA (the can be turned off by running `devbox services stop`). So, when you use AiiDA, be sure to manually run `devbox services up -b` (or without the `-b` if you want to check them).
-
-To install QE codes you have in your PATH:
-
-```shell
-aiida-quantumespresso setup codes localhost pw.x projwfc.x dos.x wannier90.x
-```
-
-and check them via `verdi code list`.
-
-## Setup additional remote computer and codes
-
-We store some configuration files in `aiida_configurations`. For example, for corvina (local workstation):
-
-```shell
-verdi computer setup --config aiida_configurations/corvina/corvina-direct-setup.yaml
-verdi computer configure core.ssh_async --config aiida_configurations/corvina/corvina-direct-config.yaml
-```
-
-If AiiDA asks for some additional information during the execution of the above commands, e.g. the default memory of the nodes, you can prompt an exclamation mark to skip it.
-
-And then, for the related codes:
-
-```shell
-verdi code create core.code.installed --config aiida_configurations/corvina/codes/p2y-5.3.0-gcc\@corvina-direct.yaml
-```
-
-Be careful: store only **once** the codes, otherwise you will have multiple nodes representing the same code (check the `verdi code list | grep corvina`).
-
-Alternatively, use the helper script to set up the computer **and all codes** in one shot (with duplicate detection):
-
-```shell
-python scripts/setup_aiida_resources.py aiida_configurations/corvina
-```
-
-Options:
-- `--computer-only` – only set up the computer, skip codes
-- `--codes-only` – only register codes, skip computer setup
-
-### Important note on remote computers
-
-They need to be set in you ~/.ssh/config file like this:
-
-```txt
-Host login02-ext.leonardo.cineca.it
-User mbonacci
-IdentityFile none
-ForwardAgent yes
-```
-
-## Using Jupyter notebooks
-
-When using Jupyter notebooks, you need to install the kernel (and use it in the notebooks):
-
-```shell
-python -m ipykernel install --user --name venv --display-name "venv"
-```
-
-If this does not work, for each notebook the first block should be:
-
-```python
-import os
-os.environ["AIIDA_PATH"] = "YOUR-AIIDA-PATH" # find it via `echo $AIIDA_PATH` in the devbox shell or by running `devbox run echo $AIIDA_PATH`.
-
-from aiida import load_profile
-load_profile()
-```
-
-## Setup the right shell
-
-Remember, before to start `devbox shell` to setup the environment variable `SHELL` with a >=5 version of bash. This helps for tab completion. I suggest to put this in the .bashrc or .bash_profile of your machine.
-
-## Setup gw2wannier90 code on remote
-
-- create a venv
-- clone the aiida-yambo-wannier90 package
-- install requirements (numpy, scipy)
-
-For example, on `aries`:
-
-```shell
-module load python/3.14.0-gcc-8.5.0-ddmg2af
-python -m venv gw2wannier90-venv
-source gw2wannier90-venv/bin/activate
-pip install numpy scipy
-git clone https://github.com/aiidaplugins/aiida-yambo-wannier90.git
-
-# TEST:
-python aiida-yambo-wannier90/utils/gw2wannier90.py 
-
-# EXPECTED OUTPUT:
-
-# usage: gw2wannier90.py [-h] [-o OUTPUT_SEEDNAME] [-e EXTENSIONS] [--no_sort] seedname
-# gw2wannier90.py: error: the following arguments are required: seedname
+source scripts/init_hook.sh
+pip install -r requirements-docs.txt
+mkdocs serve
 ```

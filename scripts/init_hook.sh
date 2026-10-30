@@ -14,6 +14,11 @@ if [ ! -d work ]; then
     echo 'Creating work folder...' && mkdir work 
 fi
 
+# initialise the PostgreSQL data directory once (only inside devbox, where initdb exists)
+if command -v initdb >/dev/null 2>&1 && [ -n "${PGDATA:-}" ] && [ ! -s "$PGDATA/PG_VERSION" ]; then
+    echo 'Initialising the PostgreSQL data directory...' && initdb >/dev/null
+fi
+
 source $VENV_DIR/bin/activate && echo "Virtual environment activated: $VENV_DIR"
 
 # setting verdi completion for bash and AiiDA path (only in interactive shells)
@@ -32,5 +37,6 @@ echo "Scripts available in this devbox:"
 echo "  - devbox run install-requirements: Install the required Python packages for AiiDA development"
 echo "  - devbox run create-aiida-profile: Create an AiiDA profile"
 echo "  - devbox run install-pseudos: Install pseudos in AiiDA"
+echo "  - python scripts/setup_aiida_resources.py aiida_configurations/corvina: installs corvina computer and codes in AiiDA"
 
-echo "Important: if this is the first time you run this environment, you can initialise the psql database by running: 'devbox services start && initdb'."
+echo "The PostgreSQL data directory is initialised automatically the first time you run a devbox command."

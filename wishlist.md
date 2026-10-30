@@ -1,0 +1,3 @@
+# wishlist to improve aiida experience for users
+
+I would like to make much easier to store codes and computer in AiiDA database, for example checking the .ssh files, and also exploring the slurm scripts we may provide to a script. Moreover, it could be nice also to use such example scripts to find the correct settings to setup resources in an AiiDA submission scripts (e.g. queue_name, account and so on)--> we might also want to just print the example settings we should set...
